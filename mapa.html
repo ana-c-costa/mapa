@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mapa</title>
+    <style>
+        body
+        {
+            width: 100%; /*largura*/
+            height: 100hv; /*altura*/
+            margin-top: 100px;
+            display: flex; /*mostrar*/
+            align-items: center;
+            align-content: center; /*alinhar-conteúdo:*/
+            flex-direction: column;
+            justify-content: center;
+            justify-items: center;
+        }
+        .boneco
+        {
+            position: absolute;
+            top: 400px;
+            left: 500px;
+        }
+        .ula
+        {
+            position: absolute;
+            top: 400px;
+            left: 500px;
+        }
+    </style>
+</head>
+<body onmousemove="moveboneco(event)";>
+        <map name="meu_mapa">
+            <area title="Visite o Rio Grande do Sul"    shape="circle" coords="260,450,20" href="https://www.tripadvisor.com.br/Attractions-g303530-Activities-State_of_Rio_Grande_do_Sul.html">
+            <area title="Visite Santa Catarina"         shape="circle" coords="290,410,20" href="https://www.tripadvisor.com.br/Attractions-g303570-Activities-State_of_Santa_Catarina.html">
+            <area title="Visite o Paraná"               shape="circle" coords="270,370,20" href="https://www.tripadvisor.com.br/Attractions-g303435-Activities-State_of_Parana.html">
+            <area title="Visite São Paulo"              shape="circle" coords="320,350,20" href="https://www.tripadvisor.com.br/Attractions-g303631-Activities-Sao_Paulo_State_of_Sao_Paulo.html">
+            <area title="Visite Mato Grosso do Sul"     shape="circle" coords="250,330,20" href="https://www.tripadvisor.com.br/Attractions-g303368-Activities-State_of_Mato_Grosso_do_Sul.html">
+            <area title="Visite Minas Gerais"           shape="circle" coords="370,310,20" href="https://www.tripadvisor.com.br/Attractions-g303370-Activities-State_of_Minas_Gerais.html">
+            <area title="Visite Goiais"                 shape="circle" coords="300,280,20" href="https://www.tripadvisor.com.br/Attractions-g303323-Activities-State_of_Goias.html">
+            <area title="Visite Mato Gosso"             shape="circle" coords="220,230,50" href="https://www.tripadvisor.com.br/Attractions-g303346-Activities-State_of_Mato_Grosso.html">
+            <area title="Visite o Distrito Federal"     shape="circle" coords="320,270,7" href="https://www.tripadvisor.com.br/Attractions-g303321-Activities-Federal_District.html">
+            <area title="Visite Bahia"                  shape="circle" coords="400,230,20" href="https://www.tripadvisor.com.br/Attractions-g303251-Activities-State_of_Bahia.html">
+            <area title="Visite Rio de Janeiro"         shape="circle" coords="380,350,10" href="https://www.tripadvisor.com.br/Attractions-g303506-Activities-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html">
+            <area title="Visite Espirito Santo"         shape="circle" coords="400,330,10" href="https://www.tripadvisor.com.br/Attractions-g303308-Activities-State_of_Espirito_Santo.html">
+            <area title="Visite Tocantins"              shape="circle" coords="320,200,10" href="https://www.tripadvisor.com.br/Attractions-g303645-Activities-State_of_Tocantins.html">
+            <area title="Visite Rondonia"               shape="circle" coords="140,210,10" href="https://www.tripadvisor.com.br/Attractions-g303555-Activities-State_of_Rondonia.html">
+            <area title="Visite o Acre"                 shape="circle" coords="50,180,15" href="https://www.tripadvisor.com.br/Attractions-g303199-Activities-State_of_Acre.html">
+            <area onmouseover="mostraaqui();" onmouseleave="mostraOriginal();"   title="Visite Amazonas"               shape="circle" coords="120,120,50" href="https://www.tripadvisor.com.br/Attractions-g303226-Activities-State_of_Amazonas.html">
+            <area title="Visite Roraima"                shape="circle" coords="160,50,10" href="https://www.tripadvisor.com.br/Attractions-g303562-Activities-State_of_Roraima.html">
+            <area title="Visite Pará"                   shape="circle" coords="260,130,50" href="https://www.tripadvisor.com.br/Attractions-g2346855-Activities-Ruropolis_State_of_Para.html">
+            <area title="Visite Amapá"                  shape="circle" coords="280,50,10" href="https://www.tripadvisor.com.br/Attractions-g303221-Activities-State_of_Amapa.html">
+            <area title="Visite Maranão"                shape="circle" coords="350,140,20" href="https://www.tripadvisor.com.br/Attractions-g303325-Activities-State_of_Maranhao.html">
+            <area title="Visite Piauí"                  shape="circle" coords="390,170,10" href="https://www.tripadvisor.com.br/Attractions-g303462-Activities-State_of_Piaui.html">
+            <area title="Visite Ceará"                  shape="circle" coords="430,140,10" href="https://www.tripadvisor.com.br/Attractions-g303284-Activities-State_of_Ceara.html">
+            <area title="Visite Rio Grande do Norte"    shape="circle" coords="470,150,5" href="https://www.tripadvisor.com.br/Attractions-g303510-Activities-State_of_Rio_Grande_do_Norte.html">
+            <area title="Visite Paraíba"                shape="circle" coords="470,165,7" href="https://www.tripadvisor.com.br/Attractions-g303422-Activities-State_of_Paraiba.html">
+            <area title="Visite Pernambuco"             shape="circle" coords="450,180,5" href="https://www.tripadvisor.com.br/Attractions-g303459-Activities-State_of_Pernambuco.html">
+            <area title="Visite Maceió"                 shape="circle" coords="460,200,5" href="https://www.tripadvisor.com.br/Attractions-g303216-Activities-Maceio_State_of_Alagoas.html">
+            <area title="Visite Aracajú"                shape="circle" coords="470,210,5" href="https://www.tripadvisor.com.br/Attractions-g303638-Activities-Aracaju_State_of_Sergipe.html">
+        </map>
+
+        <img id="BRASIL" src="mapa_brasil.jpg" usemap="#meu_mapa"> 
+
+        <img class="boneco" id="boneco" src="boneco.gif" width="80px">
+            
+</body>
+<script>
+
+    function moveboneco (event) /*serve para mover o boneco*/
+        {
+        x = event.pageX;/*passar o mouse sobre o mapa com o bonequinho*/
+        y = event.pageY;
+        boneco.style.left = (x+5) + "px"; /*(x+5) separa o mouse da imagem*/
+        boneco.style.top = (y+5) + "px";
+        }
+    function mostraOriginal()
+        {
+            boneco.src = "boneco.gif"
+        }
+    function mostraaqui()
+        {
+            boneco.src="aqui.gif"
+        }
+</script>
+</html>
